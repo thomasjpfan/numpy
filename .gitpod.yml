@@ -6,7 +6,8 @@ tasks:
       python setup.py build_ext -i
       echo "export PYTHONPATH=$PWD" >> ~/.bashrc
       source ~/.bashrc
-    command: python -c "import numpy; print(numpy.__path__)"
+    command: |
+      cd doc && make html
 
 github:
   prebuilds:
