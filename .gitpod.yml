@@ -5,7 +5,7 @@ tasks:
   - init: |
       python setup.py build_ext -i
     command: |
-      cd doc && python -c "import numpy; print(numpy.__path__)"
+      cd doc && make html
 
 github:
   prebuilds:
