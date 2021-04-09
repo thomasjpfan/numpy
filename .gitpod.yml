@@ -3,7 +3,7 @@ tasks:
   # The base image complied numpy with ccache enabled. This second build
   # should be faster since it is using the cache.
   - init: python setup.py build_ext -i
-    command: pushd doc && make html -e SPHINXOPTS="-j auto" && popd
+    command: time make -C doc -e SPHINXOPTS="-j auto" html
 
 github:
   prebuilds:
