@@ -4,10 +4,8 @@ tasks:
   # should be faster since it is using the cache.
   - init: |
       python setup.py build_ext -i
-      echo "export PYTHONPATH=/workspace/numpy" >> ~/.bashrc
-      source ~/.bashrc
     command: |
-      cd doc && make html
+      cd doc && python -c "import numpy; print(numpy.__path__)"
 
 github:
   prebuilds:
