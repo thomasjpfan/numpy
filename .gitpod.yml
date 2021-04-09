@@ -7,7 +7,7 @@ tasks:
       echo "export PYTHONPATH=/workspace/numpy" >> ~/.bashrc
       source ~/.bashrc
     command: |
-      cd doc && make html
+      cd doc && python -c "import numpy; print(numpy.__path__)"
 
 github:
   prebuilds:
