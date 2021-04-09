@@ -2,10 +2,8 @@ image: thomasjpfan/numpy-gitpod
 tasks:
   # The base image complied numpy with ccache enabled. This second build
   # should be faster since it is using the cache.
-  - init: |
-      python setup.py build_ext -i
-    command: |
-      cd doc && make html
+  - init: python setup.py build_ext -i
+    command: pushd doc && make html && popd
 
 github:
   prebuilds:
